@@ -1,0 +1,4 @@
+Name: Visualise Project
+Description: Visualise the project
+Binding: addin_visualise_project
+Interactive: true
