@@ -26,7 +26,9 @@ knitr::opts_chunk$set(
 
 The goal of `assertHE` is to help modellers build and review health economic models in R. The package provides functions which can be included within models to check that the objects created conform to standard rules (e.g. probabilities between 0 and 1). It also provides functions to review the structure of the model, showing the network of functions color coded by test coverage. Users can click on the nodes to see function and test source code, test coverage and create an AI generated summary of the function. 
 
-We are continiuing to work to improve the package and welcome contributions. To get involved, please see the [Contribution guide](https://github.com/dark-peak-analytics/assertHE/blob/main/CONTRIBUTING.md). For more context about the aims of the wider project please read [the wiki](https://github.com/dark-peak-analytics/assertHE/wiki/assertHE:-an-R-package-to-improve-quality-assurance-of-health-economic-models).
+Rob outlined the package at R-HTA 2024 with a [video](https://www.youtube.com/watch?v=wr8-w-6QGno) and [slides](https://github.com/RobertASmith/talks/blob/master/RHTA24-assertHE%20(1).pdf) publicly available for those interested in finding out more.
+
+We are continuing to work to improve the package and welcome contributions. To get involved, please see the [Contribution guide](https://github.com/dark-peak-analytics/assertHE/blob/main/CONTRIBUTING.md). For more context about the aims of the wider project please read [the wiki](https://github.com/dark-peak-analytics/assertHE/wiki/assertHE:-an-R-package-to-improve-quality-assurance-of-health-economic-models).
 
 ## Installation
 
@@ -60,6 +62,10 @@ The result is a visual representation of the model functions. This gives some in
 The below is an example of using the function on the cdx2cea model. The red nodes are the ones without tests, the green nodes are the ones with tests. When hovering over a function we can see more information including where it is defined (file and line number) and where the test (if any) resides. The coverage % of the function is also provided. Tests with coverage <20% are in red, between 20-80% in orange, and above 80% in green. These are arbitrary cut-points, reviewers should assess sufficiency of testing. 
 
 ![Function network for cdx2cea](https://github.com/dark-peak-analytics/assertHE/assets/41961614/0d330730-1e0b-40d9-b18b-b2ee14511cb6)
+
+#### Using the LLM function summary tool
+
+To use the LLM function summary tool follow the guide [here](https://github.com/dark-peak-analytics/assertHE/wiki/Using-the-LLM-functionality-in-assertHE).
 
 ### Internal checks for modellers 
 
@@ -141,7 +147,21 @@ The following models have been visualized using the package, as test cases: \
 * [DOACs-AF-Economic-model](https://github.com/Bogdasayen/DOACs-AF-Economic-model) developed by Bristol University \
 * The CGD AMR Cost model - in press. \
 * [Embedding Economics Analysis](https://github.com/DanPollardSheff/Embedding-Economic-Analysis) Diabetes Microsimulation model described in (in press). \
+* Several internal models at Dark Peak Analytics. \
+* Several internal models at Maple Health. \
+* The National Institute for Health and Care Excellence (NICE) have built the `assertHE` visualiser into their template for model reviews.
 
+Health Economics Modelling Packages: \
+- [voi R package](https://cran.rstudio.com/web/packages/voi/index.html) reviewed by GSK team. \
+
+## Sharing interactive model networks
+
+Once the model has been generated, it is possible to share the HTML for the 
+interactive network. In the visualisation tab click the downward arrow on the
+'export' button and then click 'save as web page'.
+
+The visualisation for the HTML file may take a while to load for large networks. 
+However, all the funtionality from the HTML version (not the shiny version with the links) should be there.
 
 ## Get in contact
 
